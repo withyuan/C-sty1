@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 #include<vector>
+#include<algorithm>
 #define LOG(x) std::cout << x << std::endl;
 
 
@@ -106,12 +107,18 @@ int main() {
 
     // std::array<int,5> arr={1,2,3,4,5};
     // std::sort(arr.begin(),arr.end());
-     std::vector<int> vec={1,2,3,4,5};
+     std::vector<int> vec={11,2,3,4,5};
      int multiplier = 2;
      ForEache(vec,[multiplier](int value){
         std::cout<<value*multiplier<<std::endl;
      });
+    auto  a=std::find_if(vec.begin(),vec.end(),[](int value){
+        return value>100;
+     });
 
+     std::cout<<*vec.begin()<<std::endl;
+     std::cout<<*vec.end()<<std::endl;
+        std::cout<<*a<<std::endl;
    
     std::cin.get();
     return 0;
